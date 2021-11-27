@@ -1,9 +1,10 @@
 # Github_pages_auto_posting
-
+ - ### 반드시, 모두 읽고 숙지 후 사용해주세요!
  - Github Pages로 블로그를 운영할 때, 작성한 글을 자동으로 포스팅하기 위해 만든 tool입니다.
  - \_post 및 images 폴더에 파일 관리하는 방식에 따라 소스코드에서 경로를 수정 후, 사용하셔야 합니다.
  - repo에 대한 정보와 author, message 정보를 수정 후, 사용하셔야 합니다.
  - 문의사항이 있으실 경우, Issues에 등록해주시거나 메일로 연락 부탁드립니다.
+
 
 ## Description
 
@@ -26,6 +27,7 @@
     - push 전, pull을 수행합니다.  
     - push를 수행합니다.  
 
+
 ## Getting Started
 
 ### Dependencies
@@ -33,8 +35,13 @@
 - Python 3.8.3
 - GitPython 3.1.24
 
+
 ### Installing
 
+블로그 폴더  
+![블로그 폴더](https://github.com/Dong-Jun-Shin/git_pages_auto_posting/blob/main/read_me_images/blog_dir.png)  
+블로그 폴더/\_drafts  
+![블로그 폴더/\_drafts](https://github.com/Dong-Jun-Shin/git_pages_auto_posting/blob/main/read_me_images/draft_dir.png)  
 - Gemfile이 위치한 블로그 root 폴더에 아래와 같은 구조를 만들고, 0~2.py를 위치시킵니다.
 - \_drafts(folder)  
   └ ready_post(folder)  
@@ -43,18 +50,23 @@
   └ 1.prepare_posting_proc.py  
   └ 2.auto_commit_proc.py  
 
+
 ### Executing program
 
 1. 외부 Markdown 에디터로 작성하고 내보낸 .md파일과 이미지를 target_post에 위치시킵니다.  
   (여기서 이미지 폴더의 이름은 이미지가 사용된 .md파일의 이름과 일치시킵니다.)  
 2. '0.create_layer_folders.py'을 실행시킵니다.  
-3. '1.prepare_posting_proc.py'을 실행시킵니다.  
-4. '2.auto_push_proc.py'을 실행시킵니다.  
+  ![](https://raw.githubusercontent.com/Dong-Jun-Shin/git_pages_auto_posting/main/read_me_images/0_proc.png)  
+4. '1.prepare_posting_proc.py'을 실행시킵니다.  
+  ![](https://raw.githubusercontent.com/Dong-Jun-Shin/git_pages_auto_posting/main/read_me_images/1_proc.png)  
+6. '2.auto_push_proc.py'을 실행시킵니다.  
+
 
 ## Authors
 
 Contributors names and contact info  
 [@Dongjun Shin](https://dong-jun-shin.github.io/about/profile)
+
 
 ## Version History
 * 0.1
