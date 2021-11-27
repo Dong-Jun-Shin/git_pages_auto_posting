@@ -19,7 +19,7 @@
       - 파일 내의 tags 중 date 태그에 현재 날짜와 시간을 'yyyy-mm-dd HH:MM:ss +0900' 포맷으로 추가합니다.  
       - 파일 내의 {path}라 정의된 이미지 태그의 경로를 '{{site_baseurl}}/images/{categories}/{date_year}/{date_month}/{file_title}'으로 변경합니다.  
       - .md 파일에 사용된 이미지들을 '{블로그 root 폴더}/images/{categories}/{date_year}/{date_month}/{file_title}'의 위치에 복사합니다.  
-      - .md 파일의 이름을 '{블로그 root 폴더}/images/{categories}/{date_year}/{date_month}/{file_title}/yyyy-mm-dd-{title}.md'로 복사합니다.  
+      - .md 파일의 이름을 '{블로그 root 폴더}/_posts/{categories}/{date_year}/{date_month}/{file_title}/yyyy-mm-dd-{title}.md'로 복사합니다.  
     - target_post에 존재하는 포스팅에 대해 작업이 완료되면, jekyll의 build를 통해 post를 publish합니다.  
 5. '2.auto_push_proc.py':  
     - 지정된 repo의 변경된 파일들에 대해서, commit을 수행합니다.  
