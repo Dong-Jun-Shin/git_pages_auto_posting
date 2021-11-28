@@ -31,7 +31,7 @@ def commit_proc(repo):
 
     ### git commit 생성
     r_index = repo.index
-    changedFiles = [item.a_path for item in repo.index.diff(None)]
+    changedFiles = [item.a_path for item in repo.index.diff(None)] + repo.untracked_files
     r_add_result = r_index.add(changedFiles)
     if r_add_result:
         r_index.commit(message, author=author)  # committer=committer 제외, committer = Actor("A committer", "tlsehdwns239@gmail.com") # 최근 수정한 사람
