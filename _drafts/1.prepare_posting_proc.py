@@ -8,8 +8,9 @@ REPO_PATH = '{your_repo_path}'
 FILE_PATH = os.getcwd().replace('\\', '/') + '/ready_post'
 TO_POST_PATH = ''
 TO_IMG_PATH = ''
-CATE_EXP = re.compile(r'^categories: ')
 DATE_EXP = re.compile(r'^date: ')
+CATE_EXP = re.compile(r'^categories: ')
+MAIN_IMG_EXP = re.compile(r'^image: ')
 IMG_EXP = re.compile(r'^\[link[0-9]\d*\]:')
 DATE_NAME = ''
 
@@ -57,14 +58,16 @@ def prepare_posting_proc():
                     edited_lines.append(line)
                     continue
                 if define_bool:
-                    if re.search(CATE_EXP, line):
-                        cat_id = line.split(' ')[1].strip()
                     if re.search(DATE_EXP, line):
                         now_date = datetime.now()
                         DATE_NAME = str(now_date.date())
                         date_year = str(now_date.year)
                         date_month = str(now_date.month)
                         line = line.split()[0] + ' ' + str(now_date).split('.')[0] + ' +0900\n'
+                    elif re.search(CATE_EXP, line):
+                        cat_id = line.split(' ')[1].strip()
+                    elif re.search(MAIN_IMG_EXP, line):
+                        line = line.split()[0] + ' ' + cat_id + '/' + date_year + '/' + date_month + '/' + file_title + '/0.png\n'
                     edited_lines.append(line)
                     continue
                 # [link[0-9]*]: 확인 
