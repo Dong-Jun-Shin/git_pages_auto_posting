@@ -11,9 +11,7 @@ REPO_PATH = '{your_repo_path}'
 
 def make_commit_message():
     ### 커밋 메세지 생성하기
-    summary = SUMMARY
-    description = DESCRIPTION
-    message = summary + '\n\n' + description
+    message = SUMMARY + '\n\n' + DESCRIPTION
     return message
 
 def push_proc(repo):
