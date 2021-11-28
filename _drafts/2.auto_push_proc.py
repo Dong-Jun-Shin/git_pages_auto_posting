@@ -32,7 +32,11 @@ def commit_proc(repo):
     ### git commit 생성
     r_index = repo.index
     changedFiles = [item.a_path for item in repo.index.diff(None)] + repo.untracked_files
-    r_add_result = r_index.add(changedFiles)
+    try:
+        r_add_result = r_index.add(changedFiles)
+    except FileNotFoundError:
+        messagebox.showinfo("Warning", "삭제된 파일이 있습니다.\n따로 push 후 시도해주세요.")
+        return
     if r_add_result:
         r_index.commit(message, author=author)  # committer=committer 제외, committer = Actor("A committer", "tlsehdwns239@gmail.com") # 최근 수정한 사람
         messagebox.showinfo("Success", "Commit을 완료했습니다.\n확인 후 Push 해주세요.")
