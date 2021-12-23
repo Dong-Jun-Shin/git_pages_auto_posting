@@ -1,4 +1,3 @@
-![](https://raw.githubusercontent.com/Dong-Jun-Shin/git_pages_auto_posting/main/read_me_images/cover.png)
 # Github_pages_auto_posting
  - ### 반드시, 모두 읽고 숙지 후 사용해주세요!
  - Github Pages로 블로그를 운영할 때, 작성한 글을 자동으로 포스팅하기 위해 만든 tool입니다.
